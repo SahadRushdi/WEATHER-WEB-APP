@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 :root {
-  --primary-color: #5c9ce5;
+  --primary-color: #3b57f5;
   --secondary-color: #b4d6ff;
   --tertiary-color: #e4f0fe;
   --success-color: #0ac249;
@@ -21,11 +21,12 @@ body {
 
 h2 {
   font-family: var(--main-font);
+  font-weight: #65a8ff;
   color: var(--font-color);
 }
 
 .main-box {
-  background-color: var(--tertiary-color);
+  background-color: #b9d5ff;
   border-radius: 10px;
   padding: 20px;
   margin-top: 20px;
@@ -63,7 +64,7 @@ h2 {
 }
 
 .main-card {
-  background-color: #b4d6ff;
+  background-color: #65a8ff;
   border-radius: 40px;
   width: 100%;
   height: 215px;
@@ -87,11 +88,12 @@ h2 {
 
 .main-img {
   src: url("assets/images/main-img.png");
-  position: relative;
+  position: sticky;
   z-index: 2;
   width: 100%;
-  height: 90%;
+  height: 85%;
   object-fit: fill;
+  border-radius: 2%;
   margin-left: 15px;
 }
 
@@ -113,7 +115,7 @@ h2 {
 }
 
 .week-card {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 30px;
   width: 100%;
   height: 180px;
@@ -143,7 +145,7 @@ h2 {
   font-size: 1rem;
   font-family: var(--secondary-font);
   font-weight: 700;
-  color: var(--primary-color);
+  color: #0165fc;
   margin: 5px 0 0 0;
 }
 
@@ -151,7 +153,7 @@ h2 {
   font-size: 1rem;
   font-family: var(--secondary-font);
   font-weight: 700;
-  color: var(--primary-color);
+  color: #0165fc;
   margin: 5px 0 0 0;
 }
 
@@ -197,7 +199,8 @@ h2 {
 
 #sunrise-time,
 #sunset-time {
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
+  color: #0165fc;
   font-family: var(--secondary-font);
   font-weight: 700;
   font-size: 1rem;
@@ -259,7 +262,7 @@ th {
 }
 
 .location {
-  background-color: white;
+  background-color: #65a8ff;
   border-radius: 40px;
   width: 100%;
   height: 50%;
