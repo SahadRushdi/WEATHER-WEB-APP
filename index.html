@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="main-box">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-3">
+            <h3 class="mb-0 fw-bold">Weather Forecast</h3>
+            <p id="display-date"></p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <input
+              type="text"
+              name="search"
+              id="searchBox"
+              placeholder="Search Location"
+              class="form-control"
+            />
+          </div>
+          <div class="col-md-2">
+            <ul class="units">
+              <button class="btn celcius active">°C</button>
+              <button class="btn fahrenheit">°F</button>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Left Panel -->
+          <div class="col-md-9">
+            <div class="main-card p-3 rounded">
+              <div class="row">
+                <div class="col-md-5">
+                  <h2 class="fw-bold opacity-90 m-2" id="city">New York</h2>
+                  <p class="country opacity-75 fw-bold" id="country">
+                    United States
+                  </p>
+                  <h1 class="display-temp" id="display-temp">24°C</h1>
+                </div>
+                <div class="col-md-7">
+                  <img
+                    src="assets/images/main-img.png"
+                    alt="main Logo"
+                    class="main-img"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- End of card -->
+
+            <div class="container">
+              <ul class="d-flex list-unstyled section-type">
+                <button class="me-2 fw-bold today" onclick="showData('day')">
+                  Today
+                </button>
+                <button
+                  class="me-2 fw-bold week active"
+                  onclick="showData('week')"
+                >
+                  Week
+                </button>
+              </ul>
+            </div>
+
+            <!-- Week Card List -->
+            <div class="container row d-flex" id="week-card">
+              <!-- Sunday Card-->
+              <div class="col-auto col-md-3">
+                <div class="week-card">
+                  <div class="row d-flex justify-content-between">
+                    <div class="col-6">
+                      <h4 class="fw-bold">Sunday</h4>
+                      <p class="fw-bold opacity-75">Cloudy</p>
+                    </div>
+                    <div class="col-6">
+                      <img
+                        src="assets/icons/cloudy.svg"
+                        alt="cloudy"
+                        class="card-img"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="row">
+                        <div class="col-6">
+                          <img
+                            src="assets/icons/wind-speed.svg"
+                            alt="Wind Speed"
+                            class="windspeed-img"
+                          />
+                          <img
+                            src="assets/icons/humidity.svg"
+                            alt="Humidity"
+                            class="humidity-img mt-2"
+                          />
+                        </div>
+                        <div class="col-6">
+                          <p class="wind-speed">20kmh</p>
+                          <p class="mb-2 humidity">19%</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1 align-content-end align-items-end">
+                      <h3 class="card-temp">24°</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Monday Card -->
+              <div class="col-auto col-md-3">
+                <div class="week-card">
+                  <div class="row d-flex justify-content-between">
+                    <div class="col-6">
+                      <h4 class="fw-bold">Monday</h4>
+                      <p class="fw-bold opacity-75">Sunny</p>
+                    </div>
+                    <div class="col-6">
+                      <img
+                        src="assets/icons/sunny.svg"
+                        alt="cloudy"
+                        class="card-img"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="row">
+                        <div class="col-6">
+                          <img
+                            src="assets/icons/wind-speed.svg"
+                            alt="Wind Speed"
+                            class="windspeed-img"
+                          />
+                          <img
+                            src="assets/icons/humidity.svg"
+                            alt="Humidity"
+                            class="humidity-img mt-2"
+                          />
+                        </div>
+                        <div class="col-6">
+                          <p class="wind-speed">21kmh</p>
+                          <p class="mb-2 humidity">20%</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1 align-content-end align-items-end">
+                      <h3 class="card-temp">22°</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Tuesday Card -->
+              <div class="col-auto col-md-3">
+                <div class="week-card">
+                  <div class="row d-flex justify-content-between">
+                    <div class="col-6">
+                      <h4 class="fw-bold">Tuesday</h4>
+                      <p class="fw-bold opacity-75">Sunny</p>
+                    </div>
+                    <div class="col-6">
+                      <img
+                        src="assets/icons/sunny.svg"
+                        alt="cloudy"
+                        class="card-img"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="row">
+                        <div class="col-6">
+                          <img
+                            src="assets/icons/wind-speed.svg"
+                            alt="Wind Speed"
+                            class="windspeed-img"
+                          />
+                          <img
+                            src="assets/icons/humidity.svg"
+                            alt="Humidity"
+                            class="humidity-img mt-2"
+                          />
+                        </div>
+                        <div class="col-6">
+                          <p class="wind-speed">20kmh</p>
+                          <p class="mb-2 humidity">19%</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1 align-content-end align-items-end">
+                      <h3 class="card-temp">24°</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Wednesday Card -->
+              <div class="col-auto col-md-3">
+                <div class="week-card">
+                  <div class="row d-flex justify-content-between">
+                    <div class="col-6">
+                      <h4 class="fw-bold">Wednesday</h4>
+                      <p class="fw-bold opacity-75">Rainy</p>
+                    </div>
+                    <div class="col-6">
+                      <img
+                        src="assets/icons/rainy.svg"
+                        alt="cloudy"
+                        class="card-img"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="row">
+                        <div class="col-6">
+                          <img
+                            src="assets/icons/wind-speed.svg"
+                            alt="Wind Speed"
+                            class="windspeed-img"
+                          />
+                          <img
+                            src="assets/icons/humidity.svg"
+                            alt="Humidity"
+                            class="humidity-img mt-2"
+                          />
+                        </div>
+                        <div class="col-6">
+                          <p class="wind-speed">20kmh</p>
+                          <p class="mb-2 humidity">19%</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1 align-content-end align-items-end">
+                      <h3 class="card-temp">16°</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Thursday Card -->
+              <div class="col-auto col-md-3">
+                <div class="week-card">
+                  <div class="row d-flex justify-content-between">
+                    <div class="col-6">
+                      <h4 class="fw-bold">Thursday</h4>
+                      <p class="fw-bold opacity-75">Thunder</p>
+                    </div>
+                    <div class="col-6">
+                      <img
+                        src="assets/icons/thunder.svg"
+                        alt="cloudy"
+                        class="card-img"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="row">
+                        <div class="col-6">
+                          <img
+                            src="assets/icons/wind-speed.svg"
+                            alt="Wind Speed"
+                            class="windspeed-img"
+                          />
+                          <img
+                            src="assets/icons/humidity.svg"
+                            alt="Humidity"
+                            class="humidity-img mt-2"
+                          />
+                        </div>
+                        <div class="col-6">
+                          <p class="wind-speed">20kmh</p>
+                          <p class="mb-2 humidity">19%</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1 align-content-end align-items-end">
+                      <h3 class="card-temp">24°</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Friday Card -->
+              <div class="col-auto col-md-3">
+                <div class="week-card">
+                  <div class="row d-flex justify-content-between">
+                    <div class="col-6">
+                      <h4 class="fw-bold">Friday</h4>
+                      <p class="fw-bold opacity-75">Cloudy</p>
+                    </div>
+                    <div class="col-6">
+                      <img
+                        src="assets/icons/cloudy.svg"
+                        alt="cloudy"
+                        class="card-img"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="row">
+                        <div class="col-6">
+                          <img
+                            src="assets/icons/wind-speed.svg"
+                            alt="Wind Speed"
+                            class="windspeed-img"
+                          />
+                          <img
+                            src="assets/icons/humidity.svg"
+                            alt="Humidity"
+                            class="humidity-img mt-2"
+                          />
+                        </div>
+                        <div class="col-6">
+                          <p class="wind-speed">20kmh</p>
+                          <p class="mb-2 humidity">19%</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1 align-content-end align-items-end">
+                      <h3 class="card-temp">18°</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Saturday Card -->
+              <div class="col-auto col-md-3">
+                <div class="week-card">
+                  <div class="row d-flex justify-content-between">
+                    <div class="col-6">
+                      <h4 class="fw-bold">Saturday</h4>
+                      <p class="fw-bold opacity-75">Sunny</p>
+                    </div>
+                    <div class="col-6">
+                      <img
+                        src="assets/icons/sunny.svg"
+                        alt="cloudy"
+                        class="card-img"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="row">
+                        <div class="col-6">
+                          <img
+                            src="assets/icons/wind-speed.svg"
+                            alt="Wind Speed"
+                            class="windspeed-img"
+                          />
+                          <img
+                            src="assets/icons/humidity.svg"
+                            alt="Humidity"
+                            class="humidity-img mt-2"
+                          />
+                        </div>
+                        <div class="col-6">
+                          <p class="wind-speed">20kmh</p>
+                          <p class="mb-2 humidity">19%</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1 align-content-end align-items-end">
+                      <h3 class="card-temp">20°</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- End of cards -->
+
+            <div class="container mt-3 sub-heading">Today's Highlights</div>
+
+            <!-- Highlight Card -->
+            <div class="container row mt-3">
+              <!-- Card Sunrise -->
+              <div class="col-lg-4 col-md-3 col-sm-12">
+                <div class="highlight-card">
+                  <h5>Sunrise and Sunset</h5>
+
+                  <div
+                    class="row d-flex justify-content-evenly align-items-center mt-4"
+                  >
+                    <div class="col-3">
+                      <img src="assets/icons/sunrise.svg" alt="Sunrise" />
+                    </div>
+                    <div class="col-3">
+                      <div class="sunrise">Sunrise</div>
+                      <div id="sunrise-time">06.20</div>
+                    </div>
+                    <div class="col-3">
+                      <img src="assets/icons/sunset.svg" alt="Sunset" />
+                    </div>
+                    <div class="col-3">
+                      <div class="sunset">Sunset</div>
+                      <div id="sunset-time">05.30</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card Air Quality -->
+              <div class="col-lg-4 col-md-3 col-sm-12">
+                <div class="highlight-card">
+                  <h5>Air Quality Index</h5>
+                  <div class="row d-flex">
+                    <div class="col-2">
+                      <img
+                        src="assets/icons/air.svg"
+                        alt="Air Quality"
+                        id="air-quality-image"
+                      />
+                    </div>
+                    <div class="col-10">
+                      <div id="air-quality">Good</div>
+                      <div id="air-quality-description">
+                        A perfect day for a week!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Temp Graph -->
+              <div class="col-lg-4 col-md-3 col-sm-12">
+                <div class="highlight-card">
+                  <h5>Temp Graph</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Panel -->
+          <div class="col-md-3 mt-3">
+            <div class="calendar">
+              <h5 id="calender-title">September</h5>
+              <table class="table table-sm">
+                <!-- Calendar content -->
+              </table>
+            </div>
+
+            <!-- Location Section -->
+            <div class="location">
+              <h5 id="location-title">
+                Location <img src="assets/icons/location.svg" alt="" />
+              </h5>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280033762!2d-74.14448685227137!3d40.69763123323693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2slk!4v1725693480990!5m2!1sen!2slk"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="location-map"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <!-- End of Main Box -->
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

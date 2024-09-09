@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --primary-color: #5c9ce5;
+  --secondary-color: #b4d6ff;
+  --tertiary-color: #e4f0fe;
+  --success-color: #0ac249;
+  --font-color: #1a1a1a;
+  --main-font: "Poppins", sans-serif;
+  --secondary-font: "Ubuntu", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--main-font);
+}
+
+h2 {
+  font-family: var(--main-font);
+  color: var(--font-color);
+}
+
+.main-box {
+  background-color: var(--tertiary-color);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#display-date {
+  font-family: var(--secondary-font);
+  opacity: 0.5;
+  font-size: 1.2rem;
+}
+
+#searchBox {
+  font-family: var(--main-font);
+  width: 90%;
+  border-radius: 30px;
+  padding: 0.7rem 1rem;
+}
+
+.units button {
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--font-color);
+  background-color: white;
+  border: none;
+}
+
+.units button.active {
+  color: white;
+  background-color: var(--primary-color);
+}
+
+.main-card {
+  background-color: #b4d6ff;
+  border-radius: 40px;
+  width: 100%;
+  height: 215px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.country {
+  font-family: var(--secondary-font);
+  margin-left: 10px;
+  font-size: 1.1rem;
+}
+
+.display-temp {
+  margin-left: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 4rem;
+}
+
+.main-img {
+  src: url("assets/images/main-img.png");
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 90%;
+  object-fit: fill;
+  margin-left: 15px;
+}
+
+.section-type {
+  font-family: var(--main-font);
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: none;
+}
+
+.section-type button {
+  background: none;
+  border: none;
+  font-family: var(--main-font);
+}
+
+.section-type button.active {
+  color: var(--primary-color);
+}
+
+.week-card {
+  background-color: white;
+  border-radius: 30px;
+  width: 100%;
+  height: 180px;
+  padding: 20px;
+  margin-top: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.week-card h4 {
+  position: relative;
+  z-index: 2;
+  font-family: var(--main-font);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 5px 0 0 0;
+}
+
+.wind-speed {
+  font-size: 1rem;
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 5px 0 0 0;
+}
+
+.humidity {
+  font-size: 1rem;
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 5px 0 0 0;
+}
+
+.card-temp {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 10px 0 20px 25px;
+  object-fit: fill;
+}
+
+.sub-heading {
+  font-family: var(--main-font);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 25px;
+}
+
+.highlight-card {
+  background-color: white;
+  border-radius: 30px;
+  width: auto;
+  height: 145px;
+  padding: 20px;
+  margin-top: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-card h5 {
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.sunrise,
+.sunset {
+  font-family: var(--secondary-font);
+  font-weight: 500;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+#sunrise-time,
+#sunset-time {
+  color: var(--primary-color);
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+#air-quality {
+  color: var(--success-color);
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+#air-quality-description {
+  font-family: var(--secondary-font);
+  font-weight: 500;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.calendar {
+  background-color: white;
+  border-radius: 40px;
+  width: 100%;
+  height: 30%;
+  padding: 20px;
+  margin-top: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#calender-title {
+  font-family: var(--main-font);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.table {
+  font-family: var(--secondary-font);
+  font-weight: 400;
+  font-size: 0.9rem;
+  background-color: white;
+}
+
+.table thead,
+th {
+  color: var(--primary-color) !important;
+}
+
+.today-date {
+  background-color: #5c9ce5 !important;
+  color: white !important;
+  font-weight: 500;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+.location {
+  background-color: white;
+  border-radius: 40px;
+  width: 100%;
+  height: 50%;
+  padding: 20px;
+  margin-top: 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#location-title {
+  font-family: var(--main-font);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.location-map {
+  border-radius: 20px;
+  width: 100%;
+  height: 90%;
+}
+
+@media (max-width: 768px) {
+  .units {
+    display: flex;
+    justify-content: end;
+  }
+
+  .units .btn {
+    flex: 0 0 auto;
+    width: auto;
+    /* visibility: hidden; */
+  }
+
+  .main-img {
+    visibility: hidden;
+  }
+  .week-card {
+    width: 100%;
+    height: 225px;
+    padding: 20px;
+    margin-top: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .wind-speed,
+  .humidity {
+    font-size: 1.1rem;
+  }
+
+  .windspeed-img,
+  .humidity.img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .card-temp {
+    font-size: 2.8rem;
+    margin-left: 50px;
+  }
+
+  .calendar {
+    height: 47%;
+  }
+  .location {
+    height: 60%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .main-card {
+    height: 215px;
+  }
+  .main-img {
+    width: 100%;
+    height: 100%;
+  }
+}
