@@ -165,7 +165,7 @@ async function getWeatherData(city) {
     }
   } catch (error) {
     console.error(error);
-    alert("City Not Found");
+    alert("City Has Been Located");
   }
 }
 
